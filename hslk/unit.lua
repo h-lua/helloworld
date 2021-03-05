@@ -27,9 +27,7 @@ local heros = {
         AGIplus = 2.3,
         INTplus = 2.1,
         goldcost = 0,
-        _hslk = {
-            msg = "自定义数据"
-        },
+        _msg = "自定义信息"
     },
     {
         Name = "骑士",
@@ -64,7 +62,7 @@ local heros = {
 
 for _, v in pairs(heros) do
     v.race = "human"
-    slkHelper.unit.hero(v)
+    hslk_hero(v)
 end
 
 -- 信使
@@ -87,6 +85,5 @@ local couriers = {
 for _, v in ipairs(couriers) do
     v.race = "human"
     v.HP = 100
-    v._auto_skill = true
-    slkHelper.unit.courier(v)
+    hslk_courier(v)
 end

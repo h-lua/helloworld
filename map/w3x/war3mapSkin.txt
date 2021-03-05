@@ -1,6 +1,6 @@
 [CustomSkin]
 ChatFont=fonts.ttf
-CommandButtonCooldown=interface\cooldown-ui.mdx
+CommandButtonCooldown=interface\cooldown ui.mdx
 EscMenuTextFont=fonts.ttf
 InfoPanelTextFont=fonts.ttf
 MasterFont=fonts.ttf

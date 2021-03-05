@@ -8,3 +8,4 @@ hevt = hevent
 httg = htextTag
 htxt = htexture
 hattr = hattribute
+hmsg = hmessage

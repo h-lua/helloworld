@@ -19,16 +19,16 @@ local items = {
         _overlie = 2,
         _active = "主动演示（效果需要自己处理，本图无效果）",
         _passive = "被动演示（效果需要自己处理，本图无效果）",
-        _attr = {
+        _attr = _attr({
             attack = "+10", --smart
             xtras = {
-                {
+                _xtras({
                     on = CONST_EVENT.attack, action = "targetUnit.spec.knocking", val = "triggerUnit.attack",
                     odds = 10, percent = { 300, 2000 }, effect = nil
-                },
+                })
             },
-        },
-        _ring = {
+        }),
+        _ring = _ring({
             effect = "Abilities\\Spells\\Orc\\CommandAura\\CommandAura.mdl",
             effectTarget = "Abilities\\Spells\\NightElf\\BattleRoar\\RoarTarget.mdl",
             attachTarget = "overhead",
@@ -38,7 +38,7 @@ local items = {
                 life = "+50",
                 attack_range = "+200",
             }
-        },
+        }),
     },
     {
         Name = "铁盾",

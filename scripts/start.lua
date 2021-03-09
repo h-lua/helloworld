@@ -43,16 +43,6 @@ function main()
         unitId = uidMe,
         x = 0,
         y = 0,
-        attr = {
-            e_fire_attack = "+1", -- 附魔1层火
-            attack_speed = "+5",
-            life = "+5000",
-            life_back = "+100",
-            weight = "+100",
-            -- 单位自身的暴击（自身的暴击可降低回避效果，伤害是在原伤害上加成，不独立计算）
-            knocking_odds = "+10",
-            knocking_extent = "+100",
-        }
     })
     table.insert(hhero.player_heroes[1], me)
     -- 小绵羊信使
@@ -61,9 +51,6 @@ function main()
         unitId = hslk.n2i("冷静的绵羊"),
         x = 100,
         y = 100,
-        attr = {
-            weight = "+10000", -- 负重
-        }
     })
     hunit.subCurMana(me, 100)
     onExp(me)
@@ -94,12 +81,6 @@ function main()
         x = 0,
         y = 0,
         qty = 2,
-        attr = {
-            attack_white = "+100",
-            life = "+500000",
-            life_back = "+3000",
-            damage_reduction = "+50",
-        }
     })
     -- 伤害变成经验
     hevent.onDamage(me, function(evtData)

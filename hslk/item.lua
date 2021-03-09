@@ -5,6 +5,7 @@ hslk_item_synthesis({
 local items = {
     {
         Name = "铁剑",
+        Ubertip = "主动演示（效果需要自己处理，本图无效果）|n被动演示（效果需要自己处理，本图无效果）",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSteelMelee.blp",
         goldcost = 1000,
         lumbercost = 0,
@@ -17,8 +18,6 @@ local items = {
         _remarks = "精铁铸造的大剑，是武斗者必备的武器",
         _weight = 2.3,
         _overlie = 2,
-        _active = "主动演示（效果需要自己处理，本图无效果）",
-        _passive = "被动演示（效果需要自己处理，本图无效果）",
         _attr = _attr({
             attack = "+10", --smart
             xtras = {
@@ -67,6 +66,7 @@ local items = {
     },
     {
         Name = "双铁剑",
+        Ubertip = "跳跳跳",
         Art = "ReplaceableTextures\\CommandButtons\\BTNDaggerOfEscape.blp",
         goldcost = 2000,
         lumbercost = 0,
@@ -77,7 +77,6 @@ local items = {
         Hotkey = "E",
         Rng1 = 1000,
         uses = 3,
-        _active = "跳跳跳",
         _cooldown = 2,
         _cooldownTarget = CONST_ABILITY_TARGET.location.value,
         _remarks = "双倍的铁，双倍的快乐",

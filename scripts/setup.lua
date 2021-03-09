@@ -68,12 +68,3 @@ henchant.setEnvReaction('fire', 'water', function(evtData)
         })
     end
 end)
-
-hmatcher.item({
-    {
-        "双铁剑",
-        function(evtData)
-            hunit.portal(evtData.triggerUnit, evtData.targetX, evtData.targetY)
-        end
-    }
-})

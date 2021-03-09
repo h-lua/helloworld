@@ -39,6 +39,9 @@ local items = {
                 attack_range = "+200",
             }
         }),
+        _onRing = _onRing(function(evtData)
+            print_mb(hunit.getName(evtData.enumUnit))
+        end),
     },
     {
         Name = "铁盾",
@@ -96,6 +99,9 @@ local items = {
                 },
             },
         },
+        _onItemUsed = _onItemUsed(function(evtData)
+            hunit.portal(evtData.triggerUnit, evtData.targetX, evtData.targetY)
+        end),
     },
 }
 

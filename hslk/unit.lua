@@ -30,10 +30,11 @@ local heros = {
         heroAbilList = "",
         _msg = "自定义信息，爱写啥写啥",
         _attr = {
+            reborn = "=5",
             e_fire_attack = "+1", -- 附魔1层火
             attack_speed = "+5",
-            life = "+5000",
-            life_back = "+100",
+            life = "+1000",
+            life_back = "+30",
             weight = "+100",
             -- 单位自身的暴击（自身的暴击可降低回避效果，伤害是在原伤害上加成，不独立计算）
             knocking_odds = "+10",

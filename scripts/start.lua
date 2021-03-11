@@ -93,4 +93,8 @@ function main()
             .. "攻击是" .. hattr.get(evtData.triggerUnit, 'attack') .. '点->'
             .. "暴击" .. evtData.damage .. "血")
     end)
+
+    htime.setInterval(1, function(curTimer)
+        echo(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.server.timestamp()))
+    end)
 end

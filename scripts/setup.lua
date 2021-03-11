@@ -9,7 +9,7 @@ hcmd.conf({ "-gg", "-apm", "-apc", "-eff", "-random", "-repick", "-d" }, { 1 })
 henemy.set("怪物", nil, { 2 }, false)
 
 -- 调试自动去除迷雾
-henv.setFogStatus(isDebugging() == false, isDebugging() == false)
+henv.setFogStatus(DEBUGGING == false, DEBUGGING == false)
 
 --- 设定获得黄金木头特效
 hevent.onPlayerResourceChange(function(evtData)

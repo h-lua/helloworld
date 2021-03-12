@@ -6,22 +6,22 @@ function H_DZUI takes nothing returns nothing
     call DzEnableWideScreen(true)
     // 黄金
     call DzLoadToc("resource\\hLua\\frame.toc")
-    set H_G_UI[1] = DzCreateFrame("gold", DzGetGameUI(), 0)
+    set H_G_UI[1] = DzCreateFrame("txt_gold", DzGetGameUI(), 0)
     call DzFrameClearAllPoints(H_G_UI[1])
-    call DzFrameSetPoint(H_G_UI[1], 3, DzGetGameUI(), 0, -0.03, -0.01)
+    call DzFrameSetPoint(H_G_UI[1], 3, DzGetGameUI(), 0, 0.003, -0.01)
     call DzFrameSetSize(H_G_UI[1], 0.1, 0.02)
     call DzFrameCageMouse(H_G_UI[1], false)
     call DzFrameShow(H_G_UI[1], true)
     // 木头
-    //set H_G_UI[2] = DzCreateFrame("lumber", DzGetGameUI(), 0)
-    //call DzFrameClearAllPoints(H_G_UI[2])
-    //call DzFrameSetPoint(H_G_UI[2], 3, DzGetGameUI(), 0, -0.03, -0.03)
-    //call DzFrameSetSize(H_G_UI[2], 0.1, 0.02)
-    //call DzFrameCageMouse(H_G_UI[2], false)
-    //call DzFrameShow(H_G_UI[2], true)
+    set H_G_UI[2] = DzCreateFrame("txt_lumber", DzGetGameUI(), 0)
+    call DzFrameClearAllPoints(H_G_UI[2])
+    call DzFrameSetPoint(H_G_UI[2], 3, DzGetGameUI(), 0, 0.003, -0.03)
+    call DzFrameSetSize(H_G_UI[2], 0.1, 0.02)
+    call DzFrameCageMouse(H_G_UI[2], false)
+    call DzFrameShow(H_G_UI[2], true)
 endfunction
 
 function H_DZUI_INTERVAL takes nothing returns nothing
     call DzFrameSetText(H_G_UI[1], LoadStr(H_HT_UI,1,1))
-    //call DzFrameSetText(H_G_UI[2], LoadStr(H_HT_UI,1,2))
+    call DzFrameSetText(H_G_UI[2], LoadStr(H_HT_UI,1,2))
 endfunction

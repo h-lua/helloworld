@@ -1,0 +1,5 @@
+
+// UI界面
+integer array H_G_UI
+// UI数据
+hashtable H_HT_UI=InitHashtable()

@@ -1,0 +1,19 @@
+﻿
+IncludeFile "UI\FrameDef\Glue\BattleNetTemplates.fdf",
+
+Frame "TEXT" "gold" INHERITS "BattleNetButtonTextTemplate" {
+    Text "0",
+}
+
+Frame "TEXT" "lumber" INHERITS "BattleNetButtonTextTemplate" {
+    Text "0",
+}
+
+//创建一个固定大小的背景 宽64 高64
+Frame "BACKDROP" "Demo_SizeBack"
+{
+    Width 0.04,
+    Height 0.04,
+    BackdropBackground "ReplaceableTextures\CommandButtons\BTNOrbOfDarkness.blp",
+    BackdropBlendAll,
+}

@@ -1,27 +1,58 @@
 
 // UI入口函数
 function H_DZUI takes nothing returns nothing
+    local integer frame = 0
+    local integer i = 0
     //call DzFrameHideInterface()
     //call DzFrameEditBlackBorders(0,0)
     call DzEnableWideScreen(true)
-    // 黄金
     call DzLoadToc("resource\\hLua\\frame.toc")
-    set H_G_UI[1] = DzCreateFrame("txt_gold", DzGetGameUI(), 0)
-    call DzFrameClearAllPoints(H_G_UI[1])
-    call DzFrameSetPoint(H_G_UI[1], 3, DzGetGameUI(), 0, 0.003, -0.01)
-    call DzFrameSetSize(H_G_UI[1], 0.1, 0.02)
-    call DzFrameCageMouse(H_G_UI[1], false)
-    call DzFrameShow(H_G_UI[1], true)
-    // 木头
-    set H_G_UI[2] = DzCreateFrame("txt_lumber", DzGetGameUI(), 0)
-    call DzFrameClearAllPoints(H_G_UI[2])
-    call DzFrameSetPoint(H_G_UI[2], 3, DzGetGameUI(), 0, 0.003, -0.03)
-    call DzFrameSetSize(H_G_UI[2], 0.1, 0.02)
-    call DzFrameCageMouse(H_G_UI[2], false)
-    call DzFrameShow(H_G_UI[2], true)
+    //
+    loop
+        exitwhen i >= H_UI_PLAYER_MAX
+        if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(i)) == MAP_CONTROL_USER) then
+            // DPS
+            set frame = DzCreateFrame("txt_dps", DzGetGameUI(), 0)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.10)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_DPS, frame)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+            // 杀敌
+            set frame = DzCreateFrame("txt_kill", DzGetGameUI(), 0)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.12)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_KILL, frame)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+        endif
+        set i = i + 1
+    endloop
+    // 武器型
+    // set H_G_UI[100] = DzCreateFrame("bg_attr_weapon", DzGetGameUI(), 0)
+    // call DzFrameClearAllPoints(H_G_UI[100])
+    // call DzFrameSetPoint(H_G_UI[100], 3, DzGetGameUI(), 0, 0.003, -0.03)
+    // call DzFrameSetSize(H_G_UI[100], 0.1, 0.02)
+    // call DzFrameCageMouse(H_G_UI[100], false)
+    // call DzFrameShow(H_G_UI[100], true)
+
 endfunction
 
 function H_DZUI_INTERVAL takes nothing returns nothing
-    call DzFrameSetText(H_G_UI[1], LoadStr(H_HT_UI,1,1))
-    call DzFrameSetText(H_G_UI[2], LoadStr(H_HT_UI,1,2))
+    local integer frame = 0
+    local integer i = 0
+    loop
+        exitwhen i >= H_UI_PLAYER_MAX
+        if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(i)) == MAP_CONTROL_USER) then
+            // DPS
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_DPS)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_DPS))
+            // 杀敌数
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_KILL)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_KILL))
+        endif
+        set i = i + 1
+    endloop
 endfunction

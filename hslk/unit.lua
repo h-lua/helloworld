@@ -71,6 +71,7 @@ local heros = {
         goldcost = 0,
         heroAbilList = "",
         _attr = {
+            reborn = "=3",
             attack_white = "+100",
             life = "+500000",
             life_back = "+3000",

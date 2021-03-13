@@ -1,5 +1,8 @@
 
-// UI界面
-integer array H_G_UI
-// UI数据
-hashtable H_HT_UI=InitHashtable()
+integer H_UI_PLAYER_MAX = 2
+
+hashtable H_HT_UI_FRAME=InitHashtable()
+hashtable H_HT_UI_DATA=InitHashtable()
+
+integer FK_TXT_DPS = 1
+integer FK_TXT_KILL = 2

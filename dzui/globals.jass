@@ -7,9 +7,26 @@ hashtable H_HT_UI_DATA=InitHashtable()
 integer FK_TXT_DPS = 1
 integer FK_TXT_KILL = 2
 
-integer FK_BG_ATTR = 10
-integer FK_BG_ATTR_WEAPON = 11
-integer FK_BG_ATTR_ARMOR = 12
-integer FK_BG_ATTR_SPECIAL = 13
-integer FK_BG_ATTR_ENCHANT = 14
-integer FK_BG_ATTR_DESC = 15
+integer FK_ATTR = 6
+integer FK_BG_ATTR_DESC = 7
+
+integer FK_BTN_ATTR_WEAPON = 11
+integer FK_BTN_ATTR_ARMOR = 12
+integer FK_BTN_ATTR_SPECIAL = 13
+integer FK_BTN_ATTR_ENCHANT = 14
+
+integer FK_TXT_ATTR_WEAPON = 21
+integer FK_TXT_ATTR_ARMOR = 22
+integer FK_TXT_ATTR_SPECIAL = 23
+integer FK_TXT_ATTR_ENCHANT = 24
+
+real F_X_DESC =  0.196
+real F_Y_DESC = -0.59
+real F_W_WEAPON = 0.14
+real F_H_WEAPON = 0.133
+real F_W_ARMOR = 0.14
+real F_H_ARMOR = 0.140
+real F_W_SPECIAL = 0.125
+real F_H_SPECIAL = 0.275
+real F_W_ENCHANT = 0.198
+real F_H_ENCHANT = 0.396

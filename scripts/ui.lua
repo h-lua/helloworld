@@ -5,11 +5,12 @@ UI = function()
             cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_DPS, "DPS: " .. math.numberFormat(hplayer.getDamage(enumPlayer), 4))
             cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_KILL, "杀敌数: " .. math.integerFormat(hplayer.getKill(enumPlayer)))
             local selection = hplayer.getSelection(enumPlayer)
-            print_mb("selection", hunit.getName(selection))
-            if (selection ~= nil and his.deleted(selection) == false and his.alive(selection)) then
-                cj.SaveInteger(cg.H_HT_UI_DATA, idx, cg.FK_BG_ATTR, 567)
-            else
+            local attr = hattribute.get(selection)
+            if (selection == nil or attr == nil or his.dead(selection) or his.deleted(selection)) then
                 cj.SaveInteger(cg.H_HT_UI_DATA, idx, cg.FK_BG_ATTR, 0)
+            else
+                cj.SaveInteger(cg.H_HT_UI_DATA, idx, cg.FK_BG_ATTR, 567)
+                
             end
         end)
         cj.ExecuteFunc("H_DZUI_INTERVAL")

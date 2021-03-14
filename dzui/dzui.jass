@@ -132,6 +132,38 @@ function H_DZUI takes nothing returns nothing
             call DzFrameSetSize(frame, 0.1, 0.02)
             call DzFrameCageMouse(frame, false)
             call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+            // 黄金率
+            set frame = DzCreateFrame("txt_gold", DzGetGameUI(), 0)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_GOLD, frame)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.14)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+            // 木头率
+            set frame = DzCreateFrame("txt_lumber", DzGetGameUI(), 0)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_LUMBER, frame)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.16)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+            // 经验率
+            set frame = DzCreateFrame("txt_exp", DzGetGameUI(), 0)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_EXP, frame)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.18)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
+            // 售卖率
+            set frame = DzCreateFrame("txt_sell", DzGetGameUI(), 0)
+            call SaveInteger(H_HT_UI_FRAME, i, FK_TXT_SELL, frame)
+            call DzFrameClearAllPoints(frame)
+            call DzFrameSetPoint(frame, 3, DzGetGameUI(), 0, 0.004, -0.20)
+            call DzFrameSetSize(frame, 0.1, 0.02)
+            call DzFrameCageMouse(frame, false)
+            call DzFrameShow(frame, GetLocalPlayer() == Player(i))
             // 属性标志
             call SaveInteger(H_HT_UI_FRAME, i, FK_ATTR, 0)
             set frame = DzCreateFrame("btn_attr_weapon", DzGetGameUI(), 0)
@@ -227,6 +259,18 @@ function H_DZUI_INTERVAL takes nothing returns nothing
             // 杀敌数
             set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_KILL)
             call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_KILL))
+            // 黄金率
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_GOLD)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_GOLD))
+            // 木头率
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_LUMBER)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_LUMBER))
+            // 经验率
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_EXP)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_EXP))
+            // 售卖率
+            set frame = LoadInteger(H_HT_UI_FRAME,i,FK_TXT_SELL)
+            call DzFrameSetText(frame, LoadStr(H_HT_UI_DATA,i,FK_TXT_SELL))
             // 属性标志
             set attr = LoadInteger(H_HT_UI_DATA, i, FK_ATTR)
             set attr_weapon = LoadInteger(H_HT_UI_FRAME,i,FK_BTN_ATTR_WEAPON)

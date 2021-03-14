@@ -1,9 +1,13 @@
 UI = function()
-    htime.setInterval(0.3, function(_)
+    htime.setInterval(0.33, function(_)
         hplayer.forEach(function(enumPlayer, idx)
             idx = idx - 1 --vjass玩家从0开始索引，故减1
             cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_DPS, hcolor.red("DPS: " .. math.numberFormat(hplayer.getDamage(enumPlayer), 4)))
             cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_KILL, hcolor.yellow("杀敌数: " .. math.integerFormat(hplayer.getKill(enumPlayer))))
+            cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_GOLD, hcolor.gold("黄金获得率: " .. math.floor(hplayer.getGoldRatio(enumPlayer)) .. "%"))
+            cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_LUMBER, hcolor.greenLight("木头获得率: " .. math.floor(hplayer.getLumberRatio(enumPlayer)) .. "%"))
+            cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_EXP, hcolor.seaLight("经验获得率: " .. math.floor(hplayer.getExpRatio(enumPlayer)) .. "%"))
+            cj.SaveStr(cg.H_HT_UI_DATA, idx, cg.FK_TXT_SELL, hcolor.purpleLight("售卖回收率: " .. math.floor(hplayer.getSellRatio(enumPlayer)) .. "%"))
             local selection = hplayer.getSelection(enumPlayer)
             local attr = hattribute.get(selection)
             if (selection == nil or attr == nil or his.dead(selection) or his.deleted(selection)) then
@@ -14,7 +18,7 @@ UI = function()
                 local weapon = {}
                 table.insert(weapon, "攻击: " .. math.numberFormat(attr.attack_sides[1], 2) .. "~" .. math.numberFormat(attr.attack_sides[2], 2))
                 table.insert(weapon, "攻击频率: " .. attr.attack_space .. "秒/击")
-                table.insert(weapon, "攻击范围: " .. math.floor(attr.attack_range) .. "PX")
+                table.insert(weapon, "攻击范围: " .. math.floor(attr.attack_range) .. " px")
                 table.insert(weapon, "暴击: " .. math.floor(attr.knocking_odds) .. "%几率，" .. math.floor(attr.knocking_extent) .. "%加成")
                 table.insert(weapon, "命中: " .. math.round(100 + attr.aim, 2) .. "%")
                 table.insert(weapon, "吸血: " .. math.round(attr.hemophagia, 2) .. "%")

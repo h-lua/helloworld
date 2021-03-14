@@ -5,10 +5,25 @@ IncludeFile "UI\FrameDef\Glue\BattleNetTemplates.fdf",
 Frame "TEXT" "txt_dps" INHERITS "BattleNetValueTextTemplate" {
     Text "DPS: 0",
 }
-
 // 杀敌
 Frame "TEXT" "txt_kill" INHERITS "BattleNetValueTextTemplate" {
     Text "杀敌数: 0",
+}
+// 黄金率
+Frame "TEXT" "txt_gold" INHERITS "BattleNetValueTextTemplate" {
+    Text "黄金获得率: 100%",
+}
+// 木头率
+Frame "TEXT" "txt_lumber" INHERITS "BattleNetValueTextTemplate" {
+    Text "木头获得率: 100%",
+}
+// 经验率
+Frame "TEXT" "txt_exp" INHERITS "BattleNetValueTextTemplate" {
+    Text "经验获得率: 100%",
+}
+// 售卖率
+Frame "TEXT" "txt_sell" INHERITS "BattleNetValueTextTemplate" {
+    Text "售卖回收率: 50%",
 }
 
 // 武器型 宽64 高64

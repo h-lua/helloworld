@@ -6,3 +6,10 @@ hashtable H_HT_UI_DATA=InitHashtable()
 
 integer FK_TXT_DPS = 1
 integer FK_TXT_KILL = 2
+
+integer FK_BG_ATTR = 10
+integer FK_BG_ATTR_WEAPON = 11
+integer FK_BG_ATTR_ARMOR = 12
+integer FK_BG_ATTR_SPECIAL = 13
+integer FK_BG_ATTR_ENCHANT = 14
+integer FK_BG_ATTR_DESC = 15

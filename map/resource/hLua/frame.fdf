@@ -18,7 +18,7 @@ Frame "BACKDROP" "bg_attr_weapon"
 {
     Width 0.04,
     Height 0.04,
-    BackdropBackground "ReplaceableTextures\CommandButtons\BTNArcaniteMelee.blp",
+    BackdropBackground "war3mapImported\icon_pas_Holy_WeaponMastery.blp",
     BackdropBlendAll,
 }
 
@@ -27,7 +27,7 @@ Frame "BACKDROP" "bg_attr_armor"
 {
     Width 0.04,
     Height 0.04,
-    BackdropBackground "ReplaceableTextures\CommandButtons\BTNHumanArmorUpThree.blp",
+    BackdropBackground "war3mapImported\icon_pas_Holy_AvengersShield.blp",
     BackdropBlendAll,
 }
 
@@ -36,7 +36,7 @@ Frame "BACKDROP" "bg_attr_special"
 {
     Width 0.04,
     Height 0.04,
-    BackdropBackground "ReplaceableTextures\CommandButtons\BTNGlyph.blp",
+    BackdropBackground "war3mapImported\icon_pas_Holy_HolyGuidance.blp",
     BackdropBlendAll,
 }
 
@@ -45,6 +45,21 @@ Frame "BACKDROP" "bg_attr_enchant"
 {
     Width 0.04,
     Height 0.04,
-    BackdropBackground "ReplaceableTextures\CommandButtons\BTNPurge.blp",
+    BackdropBackground "war3mapImported\icon_pas_Ability_Paladin_BlessedMending.blp",
+    BackdropBlendAll,
+}
+
+//创建一个带边框的背景 宽256 256
+Frame "BACKDROP" "bg_attr_desc" 
+{
+    Width 0.16,
+    Height 0.16,
+    BackdropTileBackground,
+    BackdropBackground  "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
+    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize  0.012,
+    BackdropBackgroundSize  0.032,
+    BackdropBackgroundInsets 0.004f 0.004f 0.004f 0.004f,
+    BackdropEdgeFile  "UI\Widgets\ToolTips\Human\human-tooltip-border.blp",
     BackdropBlendAll,
 }

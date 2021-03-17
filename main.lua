@@ -93,7 +93,5 @@ function main()
             .. "暴击" .. evtData.damage .. "血")
     end)
 
-    htime.setInterval(1, function(curTimer)
-        print_mb(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.server.timestamp()))
-    end)
+    print_mb(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.timestamp()))
 end

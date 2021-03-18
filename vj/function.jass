@@ -1,0 +1,21 @@
+
+function demoMouseEnter takes nothing returns nothing
+    local integer triggerFrame = DzGetTriggerUIEventFrame()
+    local integer desc = LoadInteger(demoMouseTable,triggerFrame, 1)
+    local integer txt = LoadInteger(demoMouseTable,triggerFrame, 2)
+    local real w = LoadReal(demoMouseTable,triggerFrame, 3)
+    local real h = LoadReal(demoMouseTable,triggerFrame, 4)
+    call DzFrameSetSize(desc, w, h)
+    call DzFrameShow(desc, true)
+    call DzFrameSetEnable(txt, true)
+    call DzFrameShow(txt, true)
+endfunction
+
+function demoMouseLeave takes nothing returns nothing
+    local integer triggerFrame = DzGetTriggerUIEventFrame()
+    local integer desc = LoadInteger(demoMouseTable,triggerFrame, 1)
+    local integer txt = LoadInteger(demoMouseTable,triggerFrame, 2)
+    call DzFrameShow(desc, false)
+    call DzFrameSetEnable(txt, false)
+    call DzFrameShow(txt, false)
+endfunction

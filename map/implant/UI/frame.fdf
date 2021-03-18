@@ -130,14 +130,14 @@ Frame "BACKDROP" "bg_attr_desc"
 }
 
 Frame "TEXT" "txt_attr_weapon" INHERITS "BattleNetValueTextTemplate" {
-        Text "",
+    Text "...",
 }
 Frame "TEXT" "txt_attr_armor" INHERITS "BattleNetValueTextTemplate" {
-    Text "",
+    Text "...",
 }
 Frame "TEXT" "txt_attr_special" INHERITS "BattleNetValueTextTemplate" {
-    Text "",
+    Text "...",
 }
 Frame "TEXT" "txt_attr_enchant" INHERITS "BattleNetValueTextTemplate" {
-    Text "",
+    Text "...",
 }

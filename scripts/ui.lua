@@ -38,7 +38,7 @@ UI = function()
                 hdzui.frameShow(frame[k][idx], idx)
             end
             frame.bg_attr_desc[idx] = hdzui.frame("bg_attr_desc", hdzui.gameUI())
-            hdzui.framePoint(frame.bg_attr_desc[idx], hdzui.gameUI(), CONST_DZUI_ALIGN.RIGHT_BOTTOM, CONST_DZUI_ALIGN.LEFT_TOP, 0.195, -0.59)
+            hdzui.framePoint(frame.bg_attr_desc[idx], hdzui.gameUI(), CONST_DZUI_ALIGN.RIGHT_BOTTOM, CONST_DZUI_ALIGN.LEFT_TOP, 0.196, -0.59)
             hdzui.frameSize(frame.bg_attr_desc[idx], 0.1, 0.1)
             for i, k in ipairs(bts) do
                 local y = -0.496 - 0.022 * i

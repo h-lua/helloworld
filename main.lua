@@ -14,20 +14,20 @@ function main()
 
     -- 初始调试物品
     hitem.create({
-        itemId = hslk.n2i("双铁剑"),
+        id = hslk.n2i("双铁剑"),
         charges = 2,
         x = 400,
         y = 400,
     })
     for _ = 1, 12 do
         hitem.create({
-            itemId = hslk.n2i("铁剑"),
+            id = hslk.n2i("铁剑"),
             charges = 1,
             x = 156,
             y = 785,
         })
         hitem.create({
-            itemId = hslk.n2i("铁盾"),
+            id = hslk.n2i("铁盾"),
             charges = 1,
             x = 872,
             y = 551,
@@ -39,7 +39,7 @@ function main()
     -- 创造一个我的剑士打倒敌人骑兵
     local me = hunit.create({
         whichPlayer = hplayer.players[1],
-        unitId = uidMe,
+        id = uidMe,
         x = 0,
         y = 0,
     })
@@ -47,7 +47,7 @@ function main()
     -- 小绵羊信使
     hunit.create({
         whichPlayer = hplayer.players[1],
-        unitId = hslk.n2i("冷静的绵羊"),
+        id = hslk.n2i("冷静的绵羊"),
         x = 100,
         y = 100,
     })

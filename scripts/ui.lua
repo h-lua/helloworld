@@ -24,7 +24,7 @@ UI = function()
     local wh = {
         weapon = { w = 0.14, h = 0.133 },
         armor = { w = 0.14, h = 0.14 },
-        special = { w = 0.125, h = 0.275 },
+        special = { w = 0.125, h = 0.278 },
         enchant = { w = 0.198, h = 0.396 },
     }
     hplayer.forEach(function(enumPlayer, idx)
@@ -95,11 +95,15 @@ UI = function()
                     table.insert(weapon, "吸血: " .. math.round(attr.hemophagia, 2) .. "%")
                     table.insert(weapon, "技能吸血: " .. math.round(attr.hemophagia_skill, 2) .. "%")
                     table.insert(weapon, "伤害增幅: " .. math.round(attr.damage_extent, 2) .. "%")
-                    hdzui.frameSetText(frame.txt_attr_weapon[idx], hcolor.white(string.implode("|n", weapon)))
+                    hdzui.frameSetText(frame.txt_attr_weapon[idx], string.implode("|n", weapon))
                 end
                 if (hdzui.frameIsEnable(frame.txt_attr_armor[idx])) then
                     local armor = {}
-                    table.insert(armor, "护甲: " .. math.floor(attr.defend, 2))
+                    if (his.invincible(selection)) then
+                        table.insert(armor, "护甲: " .. hcolor.gold("无敌"))
+                    else
+                        table.insert(armor, "护甲: " .. math.floor(attr.defend, 2))
+                    end
                     table.insert(armor, "生命恢复: " .. math.round(attr.life_back, 2) .. "点/秒")
                     table.insert(armor, "魔法恢复: " .. math.round(attr.mana_back, 2) .. "点/秒")
                     table.insert(armor, "治疗加成: " .. math.floor(attr.cure) .. "%")
@@ -108,13 +112,20 @@ UI = function()
                     table.insert(armor, "固定减伤: " .. math.round(attr.damage_reduction, 2))
                     table.insert(armor, "比例减伤: " .. math.round(attr.damage_decrease, 2) .. "%")
                     if (hunit.isPunishing(selection)) then
-                        table.insert(armor, "僵直度: " .. math.floor(attr.punish_current) .. "/" .. math.floor(attr.punish))
+                        table.insert(armor, "硬直: " .. math.floor(attr.punish_current) .. "/" .. math.floor(attr.punish))
+                    else
+                        table.insert(armor, "硬直: " .. hcolor.red("无"))
                     end
-                    hdzui.frameSetText(frame.txt_attr_armor[idx], hcolor.white(string.implode("|n", armor)))
+                    hdzui.frameSetText(frame.txt_attr_armor[idx], string.implode("|n", armor))
                 end
                 if (hdzui.frameIsEnable(frame.txt_attr_special[idx])) then
                     local special = {}
-                    table.insert(special, "复活周期: " .. math.floor(attr.reborn) .. "秒")
+                    table.insert(special, "负重: " .. math.floor(attr.weight_current) .. "/" .. math.floor(attr.weight) .. "Kg")
+                    if (attr.reborn >= 0) then
+                        table.insert(special, "复活: " .. math.floor(attr.reborn) .. "秒")
+                    else
+                        table.insert(special, "复活: " .. hcolor.red("无"))
+                    end
                     table.insert(special, "视野范围: " .. math.floor(attr.sight) .. "px")
                     table.insert(special, "反伤比率: " .. math.round(attr.damage_rebound, 2) .. "%")
                     table.insert(special, "反伤抵抗: " .. math.round(attr.damage_rebound_oppose, 2) .. "%")
@@ -133,7 +144,7 @@ UI = function()
                     table.insert(special, "爆破抵抗: " .. math.round(attr.bomb_oppose, 2) .. "%")
                     table.insert(special, "闪电链抵抗: " .. math.round(attr.lightning_chain_oppose, 2) .. "%")
                     table.insert(special, "击飞抵抗: " .. math.round(attr.crack_fly_oppose, 2) .. "%")
-                    hdzui.frameSetText(frame.txt_attr_special[idx], hcolor.white(string.implode("|n", special)))
+                    hdzui.frameSetText(frame.txt_attr_special[idx], string.implode("|n", special))
                 end
                 if (hdzui.frameIsEnable(frame.txt_attr_enchant[idx])) then
                     local enchant = {}

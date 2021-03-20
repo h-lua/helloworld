@@ -76,7 +76,7 @@ function main()
     })
     henemy.create({
         whichPlayer = hplayer.players[1],
-        unitId = uidEnemy,
+        id = uidEnemy,
         x = 0,
         y = 0,
         qty = 2,

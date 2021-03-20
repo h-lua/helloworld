@@ -115,7 +115,7 @@ Frame "BUTTON" "btn_attr_enchant"
 }
 
 //创建一个带边框的背景 宽256 256
-Frame "BACKDROP" "bg_attr_desc" 
+Frame "BACKDROP" "bg_attr_desc"
 {
     Width 0.16,
     Height 0.16,

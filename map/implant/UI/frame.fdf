@@ -1,29 +1,22 @@
 ﻿
 IncludeFile "UI\FrameDef\Glue\BattleNetTemplates.fdf",
 
-// 伤害值
-Frame "TEXT" "txt_dps" INHERITS "BattleNetValueTextTemplate" {
-    Text "DPS: 0",
+Frame "TEXT" "txt" INHERITS "BattleNetValueTextTemplate" {
+    FontColor 1.0 1.0 1.0 1.0,
+    Text "",
 }
-// 杀敌
-Frame "TEXT" "txt_kill" INHERITS "BattleNetValueTextTemplate" {
-    Text "杀敌数: 0",
-}
-// 黄金率
-Frame "TEXT" "txt_gold" INHERITS "BattleNetValueTextTemplate" {
-    Text "黄金获得率: 100%",
-}
-// 木头率
-Frame "TEXT" "txt_lumber" INHERITS "BattleNetValueTextTemplate" {
-    Text "木头获得率: 100%",
-}
-// 经验率
-Frame "TEXT" "txt_exp" INHERITS "BattleNetValueTextTemplate" {
-    Text "经验获得率: 100%",
-}
-// 售卖率
-Frame "TEXT" "txt_sell" INHERITS "BattleNetValueTextTemplate" {
-    Text "售卖回收率: 50%",
+
+Frame "BACKDROP" "bg" {
+    Width 0.16,
+    Height 0.16,
+    BackdropTileBackground,
+    BackdropBackground  "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
+    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize 0.012,
+    BackdropBackgroundSize 0.032,
+    BackdropBackgroundInsets 0.004f 0.004f 0.004f 0.004f,
+    BackdropEdgeFile  "UI\Widgets\ToolTips\Human\human-tooltip-border.blp",
+    BackdropBlendAll,
 }
 
 // 武器型 宽64 高64
@@ -112,32 +105,4 @@ Frame "BUTTON" "btn_attr_enchant"
         HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
         HighlightAlphaMode "ADD",
     }
-}
-
-//创建一个带边框的背景 宽256 256
-Frame "BACKDROP" "bg_attr_desc" 
-{
-    Width 0.16,
-    Height 0.16,
-    BackdropTileBackground,
-    BackdropBackground  "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
-    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
-    BackdropCornerSize 0.012,
-    BackdropBackgroundSize 0.032,
-    BackdropBackgroundInsets 0.004f 0.004f 0.004f 0.004f,
-    BackdropEdgeFile  "UI\Widgets\ToolTips\Human\human-tooltip-border.blp",
-    BackdropBlendAll,
-}
-
-Frame "TEXT" "txt_attr_weapon" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
-}
-Frame "TEXT" "txt_attr_armor" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
-}
-Frame "TEXT" "txt_attr_special" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
-}
-Frame "TEXT" "txt_attr_enchant" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
 }

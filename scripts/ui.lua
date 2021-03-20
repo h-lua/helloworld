@@ -24,8 +24,8 @@ UI = function()
     local wh = {
         weapon = { w = 0.14, h = 0.133 },
         armor = { w = 0.14, h = 0.14 },
-        special = { w = 0.125, h = 0.278 },
-        enchant = { w = 0.198, h = 0.396 },
+        special = { w = 0.125, h = 0.28 },
+        enchant = { w = 0.197, h = 0.396 },
     }
     hplayer.forEach(function(enumPlayer, idx)
         if (his.playing(enumPlayer)) then

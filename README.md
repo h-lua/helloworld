@@ -16,5 +16,5 @@ git clone https://github.com/hunzsig-warcraft3/h-lua-sdk-helloworld.git
 
 ### 测试游戏！
 ```
-cli.exe -t h-lua-sdk-helloworld
+sdk.exe -t h-lua-sdk-helloworld
 ```

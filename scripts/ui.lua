@@ -29,31 +29,34 @@ UI = function()
                 end
                 local y = -0.08 - 0.02 * i
                 frame[k][idx] = hdzui.frameTag("TEXT", "txt", hdzui.gameUI())
-                hdzui.framePoint(frame[k][idx], hdzui.gameUI(), CONST_DZUI_ALIGN.LEFT, CONST_DZUI_ALIGN.LEFT_TOP, 0.004, y)
+                hdzui.framePoint(frame[k][idx], hdzui.gameUI(), FRAME_ALIGN_LEFT, FRAME_ALIGN_LEFT_TOP, 0.004, y)
                 hdzui.frameSize(frame[k][idx], 0.1, 0.02)
-                hdzui.frameShow(frame[k][idx], idx)
+                hdzui.frameToggle(frame[k][idx], true, enumPlayer)
             end
             frame.bg_attr_desc[idx] = hdzui.frameTag("BACKDROP", "bg", hdzui.gameUI())
-            hdzui.framePoint(frame.bg_attr_desc[idx], hdzui.gameUI(), CONST_DZUI_ALIGN.RIGHT_BOTTOM, CONST_DZUI_ALIGN.LEFT_TOP, 0.196, -0.59)
+            hdzui.framePoint(frame.bg_attr_desc[idx], hdzui.gameUI(), FRAME_ALIGN_RIGHT_BOTTOM, FRAME_ALIGN_LEFT_TOP, 0.196, -0.59)
             hdzui.frameSize(frame.bg_attr_desc[idx], 0.1, 0.1)
+            hdzui.frameToggle(frame.bg_attr_desc[idx], false)
             for i, k in ipairs(bts) do
                 local y = -0.496 - 0.022 * i
                 local kb = "btn_attr_" .. k
                 frame[kb][idx] = hdzui.frameTag("BUTTON", kb, hdzui.gameUI())
-                hdzui.framePoint(frame[kb][idx], hdzui.gameUI(), CONST_DZUI_ALIGN.CENTER, CONST_DZUI_ALIGN.LEFT_TOP, 0.204, y)
+                hdzui.framePoint(frame[kb][idx], hdzui.gameUI(), FRAME_ALIGN_CENTER, FRAME_ALIGN_LEFT_TOP, 0.204, y)
                 hdzui.frameSize(frame[kb][idx], 0.017, 0.02)
+                hdzui.frameToggle(frame[kb][idx], false)
                 local kt = "txt_attr_" .. k
                 frame[kt][idx] = hdzui.frameTag("TEXT", "txt", hdzui.gameUI())
-                hdzui.framePoint(frame[kt][idx], frame.bg_attr_desc[idx], CONST_DZUI_ALIGN.CENTER, CONST_DZUI_ALIGN.CENTER, 0, 0)
+                hdzui.framePoint(frame[kt][idx], frame.bg_attr_desc[idx], FRAME_ALIGN_CENTER, FRAME_ALIGN_CENTER, 0, 0)
                 hdzui.frameSize(frame[kt][idx], btn[k].w - 0.02, btn[k].h)
+                hdzui.frameToggle(frame[kt][idx], false)
                 -- 绑定关系
                 cj.SaveInteger(cg.demoMouseTable, frame[kb][idx], 1, frame.bg_attr_desc[idx]) -- 背板
                 cj.SaveInteger(cg.demoMouseTable, frame[kb][idx], 2, frame[kt][idx]) -- 文字
                 cj.SaveReal(cg.demoMouseTable, frame[kb][idx], 3, btn[k].w)
                 cj.SaveReal(cg.demoMouseTable, frame[kb][idx], 4, btn[k].h)
                 -- 注册事件
-                hdzui.onMouse(frame[kb][idx], "enter", idx, "demoMouseEnter")
-                hdzui.onMouse(frame[kb][idx], "leave", idx, "demoMouseLeave")
+                hdzui.onMouse(frame[kb][idx], MOUSE_ORDER_ENTER, enumPlayer, "demoMouseEnter")
+                hdzui.onMouse(frame[kb][idx], MOUSE_ORDER_LEAVE, enumPlayer, "demoMouseLeave")
             end
         end
     end)
@@ -73,12 +76,12 @@ UI = function()
                 local attr = hattribute.get(selection)
                 if (selection == nil or attr == nil or his.dead(selection) or his.deleted(selection)) then
                     for _, k in ipairs(bts) do
-                        hdzui.frameHide(frame["btn_attr_" .. k][idx], idx)
+                        hdzui.frameToggle(frame["btn_attr_" .. k][idx], false, enumPlayer)
                     end
                     return
                 end
                 for _, k in ipairs(bts) do
-                    hdzui.frameShow(frame["btn_attr_" .. k][idx], idx)
+                    hdzui.frameToggle(frame["btn_attr_" .. k][idx], true, enumPlayer)
                 end
                 --
                 local weapon = {}

@@ -18,10 +18,10 @@ SETUP = function()
             local u = evtData.triggerUnit
             local val = math.floor(evtData.value)
             if (evtData.type == 'gold') then
-                htextTag.style(htextTag.create2Unit(u, "+" .. val .. " 金", 6, "ffcc00", 1, 1.70, 60.00), "toggle", 0, 0.20)
+                htextTag.model({ msg = "+" .. val .. "金", whichUnit = u, red = 255, green = 215, blue = 0 })
                 hsound.voice2Unit(cg.gg_snd_ReceiveGold, 100, u)
             elseif (evtData.type == 'lumber') then
-                htextTag.style(htextTag.create2Unit(u, "+" .. val .. " 木", 7, "80ff80", 1, 1.70, 60.00), "toggle", 0, 0.20)
+                htextTag.model({ msg = "+" .. val .. "木", whichUnit = u, red = 34, green = 139, blue = 34 })
                 hsound.voice2Unit(cg.gg_snd_BundleOfLumber, 100, u)
             end
         end
@@ -30,10 +30,7 @@ SETUP = function()
     --- 经验获取
     onExp = function(u)
         hevent.onExp(u, function(evtData)
-            htextTag.style(htextTag.create2Unit(
-                evtData.triggerUnit,
-                "+" .. evtData.value .. " 经验", 7, "c4c4ff", 1, 1.70, 60.00
-            ), "toggle", 0, 0.20)
+            htextTag.model({ msg = "+" .. evtData.value .. " 经验", whichUnit = u, red = 50, green = 50, blue = 251 })
         end)
     end
 

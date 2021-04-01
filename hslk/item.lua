@@ -19,7 +19,7 @@ local items = {
         _weight = 2.3,
         _overlie = 2,
         _attr = _attr({
-            attack = "+10", --smart
+            attack = "+30", --smart
             xtras = {
                 _xtras({
                     on = CONST_EVENT.attack, action = "targetUnit.spec.knocking", val = "triggerUnit.attack",

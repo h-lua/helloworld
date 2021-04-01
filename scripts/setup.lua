@@ -43,10 +43,7 @@ SETUP = function()
         { attach = 'head', effect = 'Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl' },
     })
     henchant.setEnvReaction('fire', 'water', function(evtData)
-        htextTag.style(htextTag.create2Unit(
-            evtData.targetUnit,
-            "蒸发" .. evtData.level, 9, "00f5ff", 1, 1.70, 60.00
-        ), "scale", 0, 0.20)
+        htextTag.model({ msg = "水爆 -" .. evtData.level, whichUnit = evtData.targetUnit, red = 0, green = 245, blue = 255 })
         hunit.setRGBA(evtData.targetUnit, math.random(55, 255), 0, 0, nil, 0.5)
         if (math.random(1, 10) == 5) then
             hskill.damageRange({

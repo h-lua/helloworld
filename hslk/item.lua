@@ -23,7 +23,7 @@ local items = {
             xtras = {
                 _xtras({
                     on = CONST_EVENT.attack, action = "targetUnit.spec.knocking", val = "triggerUnit.attack",
-                    odds = 10, percent = { 300, 2000 }, effect = nil
+                    odds = 30, percent = { 300, 2000 }, effect = nil
                 })
             },
         }),
@@ -95,7 +95,7 @@ local items = {
                     alias = "水蛇湍乱",
                     on = CONST_EVENT.attack, action = "targetUnit.spec.paw", val = 'damage',
                     height = 70, tokenArrowHeight = 30, shake = 'random',
-                    radius = 50, odds = 50, speed = 5, deg = 45, distance = 600, qty = 3,
+                    radius = 50, odds = 10, speed = 5, deg = 45, distance = 600, qty = 2,
                     effect = 'Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl',
                     damageType = { CONST_DAMAGE_TYPE.water }
                 },

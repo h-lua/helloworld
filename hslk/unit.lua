@@ -87,7 +87,7 @@ end
 
 -- 信使
 local couriers = {
-    {
+    _unit({
         Name = "冷静的绵羊",
         Ubertip = "一只冷酷安静的绵羊，用毛茸茸的白毛携带物品",
         unitSound = "Sheep",
@@ -102,8 +102,9 @@ local couriers = {
         spd = 500,
         _attr = {
             weight = "+10000", -- 负重
-        }
-    },
+        },
+        fused = 10,
+    })
 }
 for _, v in ipairs(couriers) do
     v.race = "human"

@@ -57,13 +57,10 @@ local items = {
         _weight = 3.1,
         _overlie = 1,
         _attr = {
-            e_physical_append = '-1',
             defend = "+1", --smart
             life = "+300",
             life_back = "+15",
-            str_green = "+10",
-            agi = "+10", --smart
-            int_green = "+10",
+            sight = "+500",
         },
     },
     {

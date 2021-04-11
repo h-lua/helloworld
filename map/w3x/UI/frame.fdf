@@ -1,124 +1,69 @@
 ﻿
-IncludeFile "UI\FrameDef\Glue\BattleNetTemplates.fdf",
-
-// 伤害值
-Frame "TEXT" "txt_dps" INHERITS "BattleNetValueTextTemplate" {
-    Text "DPS: 0",
+Frame "TEXT" "txt" {
+    DecorateFileNames,
+    FontJustificationH JUSTIFYLEFT,
+    FontJustificationV JUSTIFYMIDDLE,
+    FontFlags "FIXEDSIZE",
+    FontColor 1.0 1.0 1.0 1.0,
+    FontShadowColor 0.0 0.0 0.0 0.9,
+    FontShadowOffset 0.001 -0.001,
+    Text "",
 }
-// 杀敌
-Frame "TEXT" "txt_kill" INHERITS "BattleNetValueTextTemplate" {
-    Text "杀敌数: 0",
+Frame "TEXT" "txt_13l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.013, "",
+    FontJustificationH JUSTIFYLEFT,
 }
-// 黄金率
-Frame "TEXT" "txt_gold" INHERITS "BattleNetValueTextTemplate" {
-    Text "黄金获得率: 100%",
+Frame "TEXT" "txt_12l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.012, "",
+    FontJustificationH JUSTIFYLEFT,
 }
-// 木头率
-Frame "TEXT" "txt_lumber" INHERITS "BattleNetValueTextTemplate" {
-    Text "木头获得率: 100%",
+Frame "TEXT" "txt_10l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.010, "",
+    FontJustificationH JUSTIFYLEFT,
 }
-// 经验率
-Frame "TEXT" "txt_exp" INHERITS "BattleNetValueTextTemplate" {
-    Text "经验获得率: 100%",
+Frame "TEXT" "txt_8l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.008, "",
+    FontJustificationH JUSTIFYLEFT,
 }
-// 售卖率
-Frame "TEXT" "txt_sell" INHERITS "BattleNetValueTextTemplate" {
-    Text "售卖回收率: 50%",
+Frame "TEXT" "txt_76l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.0076, "",
+    FontJustificationH JUSTIFYLEFT,
+    FontShadowColor 0.0 0.0 0.0 0.5,
 }
-
-// 武器型 宽64 高64
-Frame "BUTTON" "btn_attr_weapon"
-{
-    Width 0.04,
-    Height 0.04,
-    //设置样式 悬停高亮
-	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
-    //设置正常状态背景
-    ControlBackdrop "btn_attr_weaponBG",
-    Frame "BACKDROP" "btn_attr_weaponBG" {
-        BackdropBackground "war3mapImported\icon_pas_Holy_WeaponMastery.blp",
-        BackdropBlendAll,
-    }
-    //悬停鼠标高亮
-	ControlMouseOverHighlight "Demo_ButtonHig",
-	Frame "HIGHLIGHT" "Demo_ButtonHig" {
-        HighlightType "FILETEXTURE",
-        HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
-        HighlightAlphaMode "ADD",
-    }
+Frame "TEXT" "txt_8r" INHERITS "txt" {
+    FrameFont "MasterFont", 0.008, "",
+    FontJustificationH JUSTIFYRIGHT,
 }
 
-// 护甲型 宽64 高64
-Frame "BUTTON" "btn_attr_armor"
-{
-    Width 0.04,
-    Height 0.04,
-    //设置样式 悬停高亮
-	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
-    //设置正常状态背景
-    ControlBackdrop "btn_attr_armorBG",
-    Frame "BACKDROP" "btn_attr_armorBG" {
-        BackdropBackground "war3mapImported\icon_pas_Holy_AvengersShield.blp",
-        BackdropBlendAll,
-    }
-    //悬停鼠标高亮
-	ControlMouseOverHighlight "Demo_ButtonHig",
-	Frame "HIGHLIGHT" "Demo_ButtonHig" {
-        HighlightType "FILETEXTURE",
-        HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
-        HighlightAlphaMode "ADD",
-    }
+Frame "BACKDROP" "cmd_elf" {
+    BackdropBackground  "hLua\ui\cmd_elf.tga",
+    BackdropBlendAll,
 }
-
-// 特殊型 宽64 高64
-Frame "BUTTON" "btn_attr_special"
-{
-    Width 0.04,
-    Height 0.04,
-    //设置样式 悬停高亮
-	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
-    //设置正常状态背景
-    ControlBackdrop "btn_attr_specialBG",
-    Frame "BACKDROP" "btn_attr_specialBG" {
-        BackdropBackground "war3mapImported\icon_pas_Holy_HolyGuidance.blp",
-        BackdropBlendAll,
-    }
-    //悬停鼠标高亮
-	ControlMouseOverHighlight "Demo_ButtonHig",
-	Frame "HIGHLIGHT" "Demo_ButtonHig" {
-        HighlightType "FILETEXTURE",
-        HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
-        HighlightAlphaMode "ADD",
-    }
+Frame "BACKDROP" "bg_info_attr" {
+    BackdropBackground  "hLua\ui\info_attr.tga",
+    BackdropBlendAll,
 }
-
-// 附魔型 宽64 高64
-Frame "BUTTON" "btn_attr_enchant"
-{
-    Width 0.04,
-    Height 0.04,
-    //设置样式 悬停高亮
-	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
-    //设置正常状态背景
-    ControlBackdrop "btn_attr_enchantBG",
-    Frame "BACKDROP" "btn_attr_enchantBG" {
-        BackdropBackground "war3mapImported\icon_pas_Ability_Paladin_BlessedMending.blp",
-        BackdropBlendAll,
-    }
-    //悬停鼠标高亮
-	ControlMouseOverHighlight "Demo_ButtonHig",
-	Frame "HIGHLIGHT" "Demo_ButtonHig" {
-        HighlightType "FILETEXTURE",
-        HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
-        HighlightAlphaMode "ADD",
-    }
+Frame "BACKDROP" "bg_info_attr_hero" {
+    BackdropBackground  "hLua\ui\info_attr_hero.tga",
+    BackdropBlendAll,
 }
-
-//创建一个带边框的背景 宽256 256
-Frame "BACKDROP" "bg_attr_desc"
-{
-    Width 0.16,
-    Height 0.16,
+Frame "BACKDROP" "bg_sign_str" {
+    BackdropBackground  "hLua\ui\sign_str.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_sign_agi" {
+    BackdropBackground  "hLua\ui\sign_agi.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_sign_int" {
+    BackdropBackground  "hLua\ui\sign_int.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_sign_nor" {
+    BackdropBackground  "hLua\ui\sign_nor.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_tooltip" {
     BackdropTileBackground,
     BackdropBackground  "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
     BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
@@ -129,15 +74,53 @@ Frame "BACKDROP" "bg_attr_desc"
     BackdropBlendAll,
 }
 
-Frame "TEXT" "txt_attr_weapon" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
+Frame "BUTTON" "btn_more"
+{
+	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
+    ControlBackdrop "btn_more_bg",
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBlendAll,
+    }
+	ControlMouseOverHighlight "btn_more_hl",
+	Frame "HIGHLIGHT" "btn_more_hl" {
+        HighlightType "FILETEXTURE",
+        HighlightAlphaFile "UI\Widgets\EscMenu\Human\quest-button-highlight.blp",
+        HighlightAlphaMode "ADD",
+    }
 }
-Frame "TEXT" "txt_attr_armor" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
+Frame "BUTTON" "btn_more_res" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_res.tga",
+    }
 }
-Frame "TEXT" "txt_attr_special" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
+Frame "BUTTON" "btn_more_x_oppose" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_x_oppose.tga",
+    }
 }
-Frame "TEXT" "txt_attr_enchant" INHERITS "BattleNetValueTextTemplate" {
-    Text "...",
+Frame "BUTTON" "btn_more_x_tras" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_x_tras.tga",
+    }
+}
+Frame "BUTTON" "btn_more_e_append" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_e_append.tga",
+    }
+}
+Frame "BUTTON" "btn_more_e_attack" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_e_attack.tga",
+    }
+}
+Frame "BUTTON" "btn_more_e_oppose" INHERITS "btn_more"
+{
+    Frame "BACKDROP" "btn_more_bg" {
+        BackdropBackground "hLua\ui\more_e_oppose.tga",
+    }
 }

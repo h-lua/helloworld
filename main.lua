@@ -42,11 +42,20 @@ function main()
         id = uidMe,
         x = 0,
         y = 0,
-    })
-    hattr.set(me, 10, {
-        sight = "+100",
+        isOpenPunish = true,
+        attr = _attr({
+            punish_current = "=1000",
+            punish = "=1000",
+        })
     })
     table.insert(hhero.player_heroes[1], me)
+    hevent.onLevelUp(me, function(evtData)
+        hattr.set(evtData.triggerUnit, 0, {
+            attack = "+10",
+            punish = "+50",
+        })
+    end)
+
     -- 小绵羊信使
     hunit.create({
         whichPlayer = hplayer.players[1],
@@ -83,6 +92,10 @@ function main()
         x = 0,
         y = 0,
         qty = 2,
+        attr = _attr({
+            punish_current = "=200",
+            punish = "=200",
+        })
     })
     -- 伤害变成经验
     hevent.onDamage(me, function(evtData)

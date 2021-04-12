@@ -20,6 +20,7 @@ local items = {
         _overlie = 2,
         _attr = _attr({
             attack = "+30", --smart
+            attack_range = "+100",
             xtras = {
                 _xtras({
                     on = CONST_EVENT.attack, action = "targetUnit.spec.knocking", val = "triggerUnit.attack",
@@ -34,13 +35,9 @@ local items = {
             radius = 600,
             target = "air,ground,friend,self,vuln,invu",
             attr = {
-                life = "+50",
-                attack_range = "+200",
+                move = "+20",
             }
         }),
-        _onRing = _onRing(function(evtData)
-            print_mb(hunit.getName(evtData.enumUnit))
-        end),
     },
     {
         Name = "铁盾",
@@ -59,8 +56,7 @@ local items = {
         _attr = {
             defend = "+1", --smart
             life = "+300",
-            life_back = "+15",
-            sight = "+500",
+            life_back = "+10",
         },
     },
     {
@@ -83,10 +79,9 @@ local items = {
         _overlie = 1,
         _attr = {
             reborn = '-0.4',
-            e_physical_attack = '+1',
-            attack = "+200", --smart
             attack_space = '-0.1',
-            cure = "+10",
+            sight = "+500",
+            cure = "+14.5",
             xtras = {
                 {
                     alias = "水蛇湍乱",

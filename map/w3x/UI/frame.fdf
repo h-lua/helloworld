@@ -30,47 +30,61 @@ Frame "TEXT" "txt_76l" INHERITS "txt" {
     FontJustificationH JUSTIFYLEFT,
     FontShadowColor 0.0 0.0 0.0 0.5,
 }
+Frame "TEXT" "txt_6l" INHERITS "txt" {
+    FrameFont "MasterFont", 0.006, "",
+    FontJustificationH JUSTIFYLEFT,
+    FontShadowColor 0.0 0.0 0.0 0.5,
+}
 Frame "TEXT" "txt_8r" INHERITS "txt" {
     FrameFont "MasterFont", 0.008, "",
     FontJustificationH JUSTIFYRIGHT,
 }
+Frame "TEXT" "txt_76r" INHERITS "txt" {
+    FrameFont "MasterFont", 0.0076, "",
+    FontJustificationH JUSTIFYRIGHT,
+}
 
-Frame "BACKDROP" "cmd_elf" {
-    BackdropBackground  "hLua\ui\cmd_elf.tga",
+Frame "BACKDROP" "main_elf" {
+    BackdropBackground "hLua\ui\main_elf.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_info_attr" {
-    BackdropBackground  "hLua\ui\info_attr.tga",
+    BackdropBackground "hLua\ui\info_attr.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_info_attr_hero" {
-    BackdropBackground  "hLua\ui\info_attr_hero.tga",
+    BackdropBackground "hLua\ui\info_attr_hero.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_sign_str" {
-    BackdropBackground  "hLua\ui\sign_str.tga",
+    BackdropBackground "hLua\ui\sign_str.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_sign_agi" {
-    BackdropBackground  "hLua\ui\sign_agi.tga",
+    BackdropBackground "hLua\ui\sign_agi.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_sign_int" {
-    BackdropBackground  "hLua\ui\sign_int.tga",
+    BackdropBackground "hLua\ui\sign_int.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_sign_nor" {
-    BackdropBackground  "hLua\ui\sign_nor.tga",
+    BackdropBackground "hLua\ui\sign_nor.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_bar" {
+    BackdropTileBackground
+    BackdropCornerSize 0.004,
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_tooltip" {
     BackdropTileBackground,
-    BackdropBackground  "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
+    BackdropBackground "UI\Widgets\ToolTips\Human\human-tooltip-background.blp",
     BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
     BackdropCornerSize 0.012,
     BackdropBackgroundSize 0.032,
     BackdropBackgroundInsets 0.004f 0.004f 0.004f 0.004f,
-    BackdropEdgeFile  "UI\Widgets\ToolTips\Human\human-tooltip-border.blp",
+    BackdropEdgeFile "UI\Widgets\ToolTips\Human\human-tooltip-border.blp",
     BackdropBlendAll,
 }
 

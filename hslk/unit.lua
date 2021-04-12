@@ -32,12 +32,13 @@ local heros = {
         _attr = {
             reborn = "=5",
             e_fire_attack = "+1", -- 附魔1层火
+            attack_white = "+50",
             attack_speed = "+5",
             life = "+1000",
             life_back = "+30",
             weight = "+100",
             -- 单位自身的暴击（自身的暴击可降低回避效果，伤害是在原伤害上加成，不独立计算）
-            knocking_odds = "+25",
+            knocking_odds = "+30",
             knocking_extent = "+50",
         },
     },

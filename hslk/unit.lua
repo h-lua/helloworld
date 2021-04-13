@@ -32,7 +32,7 @@ local heros = {
         _attr = {
             reborn = "=5",
             e_fire_attack = "+1", -- 附魔1层火
-            attack_white = "+50",
+            attack_white = "+90",
             attack_speed = "+5",
             life = "+1000",
             life_back = "+30",

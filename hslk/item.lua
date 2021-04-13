@@ -79,6 +79,7 @@ local items = {
         _overlie = 1,
         _attr = {
             reborn = '-0.4',
+            attack = "+50",
             attack_space = '-0.1',
             sight = "+500",
             cure = "+14.5",

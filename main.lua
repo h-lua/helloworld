@@ -44,15 +44,15 @@ function main()
         y = 0,
         isOpenPunish = true,
         attr = _attr({
-            punish_current = "=1000",
-            punish = "=1000",
-        })
+            punish_current = "=1500",
+            punish = "=1500",
+        }),
     })
     table.insert(hhero.player_heroes[1], me)
     hevent.onLevelUp(me, function(evtData)
         hattr.set(evtData.triggerUnit, 0, {
-            attack = "+10",
-            punish = "+50",
+            attack = "+30",
+            punish = "+200",
         })
     end)
 
@@ -91,7 +91,7 @@ function main()
         id = uidEnemy,
         x = 0,
         y = 0,
-        qty = 2,
+        qty = 1,
         attr = _attr({
             punish_current = "=200",
             punish = "=200",

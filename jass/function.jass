@@ -1,19 +1,19 @@
 
-function demoMouseEnter takes nothing returns nothing
+function hLuaDemoMoreEnter takes nothing returns nothing
     local integer triggerFrame = DzGetTriggerUIEventFrame()
-    local integer desc = LoadInteger(demoMouseTable,triggerFrame, 1)
-    local integer txt = LoadInteger(demoMouseTable,triggerFrame, 2)
-    local real w = LoadReal(demoMouseTable,triggerFrame, 3)
-    local real h = LoadReal(demoMouseTable,triggerFrame, 4)
-    call DzFrameSetSize(desc, w, h)
-    call DzFrameShow(desc, true)
-    call DzFrameShow(txt, true)
+    local integer pid = GetPlayerId(GetLocalPlayer()) + 1
+    local integer btnId = LoadInteger(hLuaDemoHash, triggerFrame, pid)
+    local string s = LoadStr(hLuaDemoHash, pid, btnId)
+    local real w = LoadReal(hLuaDemoHash, pid, 20 + btnId)
+    local real h = LoadReal(hLuaDemoHash, pid, 30 + btnId)
+    call DzFrameSetSize(hLuaDemoMoreTip, w, h)
+    call DzFrameSetText(hLuaDemoMoreTxt, s)
+    call DzFrameShow(hLuaDemoMoreTip, true)
+    call DzFrameShow(hLuaDemoMoreTxt, true)
+    set s = null
 endfunction
 
-function demoMouseLeave takes nothing returns nothing
-    local integer triggerFrame = DzGetTriggerUIEventFrame()
-    local integer desc = LoadInteger(demoMouseTable,triggerFrame, 1)
-    local integer txt = LoadInteger(demoMouseTable,triggerFrame, 2)
-    call DzFrameShow(txt, false)
-    call DzFrameShow(desc, false)
+function hLuaDemoMoreLeave takes nothing returns nothing
+    call DzFrameShow(hLuaDemoMoreTip, false)
+    call DzFrameShow(hLuaDemoMoreTxt, false)
 endfunction

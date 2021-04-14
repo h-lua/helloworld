@@ -104,9 +104,6 @@ function main()
     -- 暴击时获得11黄金
     hevent.onKnocking(me, function(evtData)
         haward.forUnitGold(evtData.triggerUnit, 11)
-        print_mb(hunit.getName(evtData.triggerUnit)
-            .. "攻击是" .. hattr.get(evtData.triggerUnit, 'attack') .. '点->'
-            .. "暴击" .. evtData.damage .. "血")
     end)
 
     print_mb(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.timestamp()))

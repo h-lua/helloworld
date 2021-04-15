@@ -1,6 +1,6 @@
 hdzui.wideScreen()
-hdzui.hideInterface()
+-- hdzui.hideInterface()
 
 UI = function()
-    hdzui.DEMO()
+    -- nothing
 end

@@ -49,7 +49,11 @@ Frame "TEXT" "txt_76c" INHERITS "txt" {
 }
 
 Frame "BACKDROP" "main" {
-    BackdropBackground "hLua\ui\main_elf.tga",
+    BackdropBackground "hLua\ui\main_human.tga",
+    BackdropBlendAll,
+}
+Frame "BACKDROP" "bg_block" {
+    BackdropBackground "hLua\ui\block_human.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_info_attr" {
@@ -58,10 +62,6 @@ Frame "BACKDROP" "bg_info_attr" {
 }
 Frame "BACKDROP" "bg_info_attr_hero" {
     BackdropBackground "hLua\ui\info_attr_hero.tga",
-    BackdropBlendAll,
-}
-Frame "BACKDROP" "bg_block" {
-    BackdropBackground "hLua\ui\block_elf.tga",
     BackdropBlendAll,
 }
 Frame "BACKDROP" "bg_sign_str" {

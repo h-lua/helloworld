@@ -7,6 +7,7 @@ function hLuaDemoMoreEnter takes nothing returns nothing
     local real w = LoadReal(hLuaDemoHash, pid, 20 + btnId)
     local real h = LoadReal(hLuaDemoHash, pid, 30 + btnId)
     call DzFrameSetSize(hLuaDemoMoreTip, w, h)
+    call DzFrameSetPoint(hLuaDemoMoreTip, 6, DzGetGameUI(), 7, 0.088, 0.07-R2I(btnId)*0.015)
     call DzFrameSetText(hLuaDemoMoreTxt, s)
     call DzFrameShow(hLuaDemoMoreTip, true)
     call DzFrameShow(hLuaDemoMoreTxt, true)

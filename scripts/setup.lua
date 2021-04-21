@@ -64,14 +64,14 @@ SETUP = function()
         end
     end)
 
-    -- 三围属性
-    hattribute.setThreeBuff({
+    -- 映射属性
+    hattribute.setRelation({
         primary = 0,
         str = nil,
         agi = nil,
         int = {
             mana = 5,
             mana_back = 0.1,
-        }
+        },
     })
 end

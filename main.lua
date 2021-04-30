@@ -36,8 +36,7 @@ function main()
     local uidMe = hslk.n2i("剑士")
     local uidEnemy = hslk.n2i("骑士")
     -- 创造一个我的剑士打倒敌人骑兵
-    local me
-    me = hunit.create({
+    local me = hunit.create({
         whichPlayer = hplayer.players[1],
         id = uidMe,
         x = 0,
@@ -46,6 +45,7 @@ function main()
         attr = _attr({
             punish_current = "=1500",
             punish = "=1500",
+            move = "=522",
         }),
     })
     table.insert(hhero.player_heroes[1], me)
@@ -57,7 +57,7 @@ function main()
     end)
 
     -- 小绵羊信使
-    hunit.create({
+    local sheep = hunit.create({
         whichPlayer = hplayer.players[1],
         id = hslk.n2i("冷静的绵羊"),
         x = 100,
@@ -86,7 +86,7 @@ function main()
             }
         },
     })
-    henemy.create({
+    local knight = henemy.create({
         whichPlayer = hplayer.players[1],
         id = uidEnemy,
         x = 0,
@@ -96,6 +96,19 @@ function main()
             punish_current = "=200",
             punish = "=200",
         })
+    })
+    -- 小地图有趣跟踪
+    hdzui.miniMapTrack({ whichUnit = me })
+    hdzui.miniMapTrack({ whichUnit = sheep })
+    hdzui.miniMapTrack({
+        whichUnit = knight,
+        action = function(_t)
+            if (his.dead(_t.whichUnit)) then
+                hjapi.DzFrameShow(_t.frame, false)
+                return
+            end
+            hjapi.DzFrameShow(_t.frame, true)
+        end
     })
     -- 伤害变成经验
     hevent.onDamage(me, function(evtData)

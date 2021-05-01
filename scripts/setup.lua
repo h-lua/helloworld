@@ -4,7 +4,7 @@ SETUP = function()
     hplayer.convert_ratio = 1000000 -- 换算比率，100金 -> 1木
 
     -- 设定玩家支持的默认命令
-    hcmd.conf({ "-gg", "-apm", "-apc", "-eff", "-random", "-repick", "-d" }, { 1 })
+    hcmd.conf({ "-gg", "-apm", "-apc", "-random", "-repick", "-d" }, { 1 })
 
     -- 设定敌军
     henemy.set("怪物", nil, { 2 }, false)

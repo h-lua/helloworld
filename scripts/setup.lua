@@ -19,10 +19,10 @@ SETUP = function()
             local val = math.floor(evtData.value)
             if (evtData.type == 'gold') then
                 htextTag.model({ msg = "+" .. val .. "金", whichUnit = u, red = 255, green = 215, blue = 0 })
-                hsound.voice2Unit(cg.gg_snd_ReceiveGold, 100, u)
+                hsound.voice2Unit(JassGlobals.gg_snd_ReceiveGold, 100, u)
             elseif (evtData.type == 'lumber') then
                 htextTag.model({ msg = "+" .. val .. "木", whichUnit = u, red = 34, green = 139, blue = 34 })
-                hsound.voice2Unit(cg.gg_snd_BundleOfLumber, 100, u)
+                hsound.voice2Unit(JassGlobals.gg_snd_BundleOfLumber, 100, u)
             end
         end
     end)

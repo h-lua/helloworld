@@ -87,7 +87,6 @@ function main()
         },
     })
     local knight = henemy.create({
-        whichPlayer = hplayer.players[1],
         id = uidEnemy,
         x = 0,
         y = 0,

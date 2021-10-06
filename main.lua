@@ -119,4 +119,16 @@ function main()
     end)
 
     print_mb(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.timestamp()))
+
+    htime.setInterval(1, function(curTimer)
+        hskill.missile({
+            sourceUnit = me,
+            targetUnit = knight,
+            missile = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
+            hover = 200,
+            speed = 500,
+            acceleration = 0,
+            height = 300,
+        })
+    end)
 end

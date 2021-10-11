@@ -8,6 +8,16 @@ require "scripts.ui" -- UI
 -- The game starts here 游戏从main函数开始运行
 function main()
 
+    local txt = hcolor.format("%s在%s里观摩%s，结果弄坏了，赔了%s", hcolor.white, {
+        { "80ff00", "剑圣" },
+        { "ff59ff", "武器屋" },
+        { "ff0000", "[圣剑·火之高兴]" },
+        { hcolor.gold, "100W" },
+    })
+
+    print_mb(txt)
+    echo(txt)
+
     SETUP()
     UI()
 

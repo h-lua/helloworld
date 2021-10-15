@@ -8,16 +8,6 @@ require "scripts.ui" -- UI
 -- The game starts here 游戏从main函数开始运行
 function main()
 
-    local txt = hcolor.format("%s在%s里观摩%s，结果弄坏了，赔了%s", hcolor.white, {
-        { "80ff00", "剑圣" },
-        { "ff59ff", "武器屋" },
-        { "ff0000", "[圣剑·火之高兴]" },
-        { hcolor.gold, "100W" },
-    })
-
-    print_mb(txt)
-    echo(txt)
-
     SETUP()
     UI()
 
@@ -131,6 +121,11 @@ function main()
     print_mb(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", hdzapi.timestamp()))
 
     htime.setInterval(1, function(curTimer)
+        if (hterrain.isWater(hunit.x(me), hunit.y(me))) then
+            htextTag.create2Unit(me, "你在水里", 10, "80ffff", 1.0, 1, 200)
+        else
+            htextTag.create2Unit(me, "你不在水里", 10, "ffffff", 1.0, 1, 200)
+        end
         hskill.missile({
             sourceUnit = me,
             targetUnit = knight,

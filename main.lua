@@ -130,7 +130,7 @@ function main()
             sourceUnit = me,
             targetUnit = knight,
             missile = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
-            hover = 200,
+            hover = 100,
             speed = 500,
             acceleration = 0,
             height = 300,

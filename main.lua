@@ -54,16 +54,17 @@ function main()
 
     hunit.subCurMana(me, 100)
     onExp(me)
+    -- 伤害变成经验
+    hevent.onDamage(me, function(evtData)
+        haward.forUnitExp(evtData.triggerUnit, evtData.damage / 30)
+    end)
+
     local knight = henemy.create({
         id = uidEnemy,
         x = 0,
         y = 0,
         qty = 1,
     })
-    -- 伤害变成经验
-    hevent.onDamage(me, function(evtData)
-        haward.forUnitExp(evtData.triggerUnit, evtData.damage / 30)
-    end)
 
     print(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", htime.unix()))
 

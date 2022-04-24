@@ -66,7 +66,7 @@ function main()
         qty = 1,
     })
 
-    print(os.date("%Y年%m月%d日%H时%M分%S秒-星期%w", htime.unix()))
+    dump(htime.date())
 
     htime.setInterval(1, function(curTimer)
         if (hterrain.isWater(hunit.x(me), hunit.y(me))) then

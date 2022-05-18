@@ -2,6 +2,8 @@
 require "h-lua" -- h-lua库
 require "scripts.alias" -- alias h-lua库别称（参考）
 require "scripts.setup" -- setup 游戏准备
+require "scripts.eventReaction" -- 事件反应
+require "scripts.damaging" -- 伤害流
 require "scripts.ui" -- UI
 
 -- h-lua main function 主函数入口

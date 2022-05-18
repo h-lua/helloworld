@@ -70,8 +70,8 @@ local heros = {
         _attr = {
             reborn = "=3",
             attack_white = "+100",
-            life = "+500000",
-            life_back = "+3000",
+            life = "+100000",
+            life_back = "+100",
             defend = "+50",
         },
     },

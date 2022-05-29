@@ -9,7 +9,7 @@ end)
 
 --- 无敌判断
 damaging.defined("invincible", function(options)
-    if (his.invincible(options.targetUnit) == true) then
+    if (hunit.isInvincible(options.targetUnit) == true) then
         options.damage = 0
     end
 end)

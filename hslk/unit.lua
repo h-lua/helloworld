@@ -30,12 +30,11 @@ local heros = {
         heroAbilList = "",
         _msg = "自定义信息，爱写啥写啥",
         _attr = {
-            reborn = "=5",
-            e_fire_attack = "+1", -- 附魔1层火
-            attack_white = "+200",
-            attack_speed = "+5",
-            life = "+1000",
-            life_back = "+30",
+            reborn = 5,
+            attack_white = 200,
+            attack_speed = 5,
+            life = 1000,
+            life_back = 30,
         },
     },
     {
@@ -68,11 +67,11 @@ local heros = {
         goldcost = 0,
         heroAbilList = "",
         _attr = {
-            reborn = "=3",
-            attack_white = "+100",
-            life = "+100000",
-            life_back = "+100",
-            defend = "+50",
+            reborn = 3,
+            attack_white = 100,
+            life = 100000,
+            life_back = 100,
+            defend = 50,
         },
     },
 }
